@@ -15,6 +15,9 @@ public class CMais extends Planeta{
         if (momento != (int) momento) {
             throw new IllegalArgumentException("O valor de momento deve ser um número inteiro.");
         }
+
+        posicaoX = 8;
+        posicaoY = 14;
         int unidades = momento * translacao;
         int direcao = 0;
         for (int i = 0; i < unidades; i++) {

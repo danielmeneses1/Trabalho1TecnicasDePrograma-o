@@ -8,8 +8,8 @@ public abstract class Planeta extends Elemento implements IPlaneta {
     protected int tempo;
     protected double rotacao;
     protected int anoJavalar = 0;
-    protected int colisoesBugs = 0;
-    protected int colisoesDevs = 0;
+    public int colisoesBugs = 0;
+    public int colisoesDevs = 0;
 
     public Planeta(int posicaoX, int posicaoY) {
         super(posicaoX, posicaoY);

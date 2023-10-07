@@ -15,7 +15,6 @@ public class Plano {
     public List<Planeta> planetas;
     private List<Bug> bugs = new ArrayList<>();
     private List<Dev> devs = new ArrayList<>();
-    public List<Planeta> PlanetasApagados;
     protected Celula[][] celulas = new Celula[17][16];
 
 
@@ -100,7 +99,7 @@ public class Plano {
                 for (Dev dev : devs) {
                     if (planeta.getPosicaoX() == dev.getPosicaoX() && planeta.getPosicaoY() == dev.getPosicaoY()) {
                         planeta.AumentarTranslação();
-                        planeta.incrementarColisoesDevs();
+                        planeta.colisoesDevs++;
                         System.out.println("O planeta, "+ planeta.getNome() + " encontrou um desenvolvedor na posição, X="+ planeta.getPosicaoX() +" y= "+ planeta.getPosicaoY());
                     }
                 }
@@ -112,12 +111,27 @@ public class Plano {
                 for (Bug bug : bugs) {
                     if (planeta.getPosicaoX() == bug.getPosicaoX() && planeta.getPosicaoY() == bug.getPosicaoY()) {
                         planeta.DiminuirTranslação();
+                        planeta.colisoesBugs++;
                         System.out.println("O planeta, " + planeta.getNome() + " encontrou um bug na posição, X=" + planeta.getPosicaoX() + " y= " + planeta.getPosicaoY());
-                        planeta.incrementarColisoesBugs();
+
                     }
 
                 }
             }
+        }
+
+        public void norteSulJava(){
+            int ContadorNorte = 0;
+            int ContadorSul = 0;
+        for(Planeta planeta : planetas){
+            if(planeta.getPosicaoY() >= 8){
+                ContadorNorte++;
+            } else if (planeta.getPosicaoY() <= 6) {
+                ContadorSul ++;
+            }
+        }
+            System.out.println("Numero de planetas ao norte de java =" + ContadorNorte);
+            System.out.println("Numero de planetas ao sul de java = " + ContadorSul);
         }
 
 
@@ -125,7 +139,6 @@ public class Plano {
         for (Planeta planeta : planetas){
             if(planeta.getTranslacao()==0){
                 System.out.println("O planeta "+ planeta.getNome() +" explodiu");
-                PlanetasApagados.remove(planeta);
             }
         }
 

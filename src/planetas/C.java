@@ -3,7 +3,7 @@ package planetas;
 public class C extends Planeta{
 
     public C() {
-        super(8,10);
+        super(8,15);
         this.nome = "C";
         this.translacao = 10;
         this.posicaoY = 15;
@@ -13,9 +13,9 @@ public class C extends Planeta{
 
     @Override
     public void mover(int momento) {
-        if (momento != (int) momento) {
-            throw new IllegalArgumentException("O valor de momento deve ser um número inteiro.");
-        }
+
+        posicaoX = 8;
+        posicaoY = 15;
         int unidades = momento * translacao;
         int direcao = 0;
         for (int i = 0; i < unidades; i++) {

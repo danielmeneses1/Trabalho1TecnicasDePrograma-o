@@ -12,6 +12,9 @@ public class PHP extends Planeta{
         if (momento != (int) momento) {
             throw new IllegalArgumentException("O valor de momento deve ser um número inteiro.");
         }
+
+        posicaoX = 8;
+        posicaoY = 12;
         int unidades = momento * translacao;
         int direcao = 0;
 
