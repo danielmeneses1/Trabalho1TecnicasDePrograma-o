@@ -121,16 +121,14 @@ public class Plano {
         }
 
 
-        public List<Planeta> explodirPlaneta(){
-        List<Planeta> planetasDeletados = new ArrayList<>();
+        public void explodirPlaneta(){
         for (Planeta planeta : planetas){
             if(planeta.getTranslacao()==0){
                 System.out.println("O planeta "+ planeta.getNome() +" explodiu");
-                planetasDeletados.add(planeta);
-                PlanetasApagados = planetasDeletados;
+                PlanetasApagados.remove(planeta);
             }
         }
-        return planetasDeletados;
+
         }
 
 

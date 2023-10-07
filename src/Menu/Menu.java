@@ -13,7 +13,6 @@ public class Menu {
     private int momento;
     private Plano plano;
     private List<Planeta> planetas;
-    private List<Planeta> planetasApagados;
     private int momentosTotais;
 
     public Menu() {
@@ -47,13 +46,13 @@ public class Menu {
             plano.verificarColisaoDev();
             plano.verificarColisaoBug();
             System.out.println();
+            plano.explodirPlaneta();
                     //plano.mostrarPosicaoBugs();
                     //plano.mostrarPosicoesDevs();
 
 
             this.plano = plano;
             this.planetas = planetas;
-            this.planetasApagados = plano.explodirPlaneta();
             this.momentosTotais = momento;
 
                     break;

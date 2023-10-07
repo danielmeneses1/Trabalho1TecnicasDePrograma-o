@@ -3,6 +3,7 @@ package Relatorio;
 import Plano.Plano;
 import planetas.Planeta;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,13 +59,14 @@ public class Relatorio {
     }
 
     public void totalDeDias(int momento){
+        DecimalFormat df = new DecimalFormat("#.##");
         System.out.println("Total de dias passados: ");
         for (Planeta planeta : planetas){
             double dias = (planeta.getRotacao() * momento) / 24;
-            System.out.println("NO planeta "+ planeta.getNome() + " Passaram-se "+ dias + " Dias");
+            String diasFormatados = df.format(dias);
+            System.out.println("No planeta "+ planeta.getNome() + " Passaram-se "+ diasFormatados + " Dias");
         }
     }
-
     public void verificarSeExplodiu(){
         for (Planeta planeta : planetas){
             if(planeta.getTranslacao() == 0){
