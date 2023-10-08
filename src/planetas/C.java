@@ -6,7 +6,6 @@ public class C extends Planeta{
         super(8,15);
         this.nome = "C";
         this.translacao = 10;
-        this.posicaoY = 15;
         this.rotacao = 0.1;
 
     }

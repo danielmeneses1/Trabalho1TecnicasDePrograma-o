@@ -134,7 +134,25 @@ public class Plano {
             System.out.println("Numero de planetas ao sul de java = " + ContadorSul);
         }
 
-
+        public void verificarAlinhamento() {
+            for (Planeta planeta : planetas) {
+                for (Planeta planeta1 : planetas) {
+                    if (planeta1.getPosicaoY() == planeta.getPosicaoY() + 1 && planeta1.getPosicaoX() == planeta.getPosicaoX()) {
+                        System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() + 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() - 1) {
+                        System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() - 1 && planeta1.getPosicaoX() == planeta.getPosicaoX()) {
+                        System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() - 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() - 1) {
+                        System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    }else if (planeta1.getPosicaoY() == planeta.getPosicaoY() - 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() + 1) {
+                        System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    }else if (planeta1.getPosicaoY() == planeta.getPosicaoY() + 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() + 1) {
+                        System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    }
+                }
+            }
+        }
         public void explodirPlaneta(){
         for (Planeta planeta : planetas){
             if(planeta.getTranslacao()==0){

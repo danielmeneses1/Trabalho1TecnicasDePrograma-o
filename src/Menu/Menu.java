@@ -22,10 +22,10 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         System.out.println("Bem vindo ao sistema Javalar");
 
-        plano = new Plano(); // Cria o plano uma vez
+        plano = new Plano();
         plano.preencherBugs();
         plano.preencherDevs();
-        planetas = plano.getPlanetas(); // Obtém a lista de planetas uma vez
+        planetas = plano.getPlanetas();
 
         while (continuar) {
             System.out.println("Escolha uma opção:");
@@ -47,6 +47,7 @@ public class Menu {
                     System.out.println();
                     plano.explodirPlaneta();
                     plano.norteSulJava();
+                    plano.verificarAlinhamento();
                     this.momento = momento;
                     this.bugs = plano.getBugs();
                     break;
