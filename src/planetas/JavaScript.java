@@ -6,9 +6,11 @@ public class JavaScript extends Planeta {
         this.nome = "JavaScript";
         this.translacao = 3;
         this.rotacao = 10;
+        this.resumo = "JavaScript é uma linguagem de programação de alto nível que é principalmente usada para criar interatividade em páginas da web.\n" +
+                "É uma parte fundamental do desenvolvimento front-end e é executado nos navegadores dos usuários para controlar o comportamento das páginas web.\n" +
+                "Também é usado no desenvolvimento de aplicativos web e móveis.";
 
     }
-
     public void mover(int momento){
 
         posicaoX = 8;

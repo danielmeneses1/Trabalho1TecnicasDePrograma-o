@@ -10,6 +10,7 @@ public abstract class Planeta extends Elemento implements IPlaneta {
     protected int anoJavalar = 0;
     protected int colisoesBugs = 0;
     protected int colisoesDevs = 0;
+    protected String resumo;
 
     public Planeta(int posicaoX, int posicaoY) {
         super(posicaoX, posicaoY);
@@ -85,4 +86,10 @@ public abstract class Planeta extends Elemento implements IPlaneta {
     public double getRotacao() {
         return rotacao;
     }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+
 }

@@ -7,8 +7,10 @@ public class CSharp extends Planeta{
         this.nome = "C#";
         this.translacao = 1;
         this.rotacao = 4;
+        this.resumo = "C# é uma linguagem de programação desenvolvida pela Microsoft.\n" +
+                "É frequentemente usado para desenvolvimento de aplicativos Windows e jogos usando a plataforma Unity.\n" +
+                "Também é uma parte importante do desenvolvimento de aplicativos para a plataforma .NET.";
     }
-
     public void mover(int momento) {
 
         posicaoX = 8;

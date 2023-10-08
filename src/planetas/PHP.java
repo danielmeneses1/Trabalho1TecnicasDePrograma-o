@@ -6,9 +6,12 @@ public class PHP extends Planeta{
         this.nome = "PHP";
         this.translacao = 2;
         this.rotacao = 60;
-    }
+        this.resumo = "PHP é uma linguagem de script amplamente usada para desenvolvimento web.\n" +
+                "É executado no servidor e é usado para criar páginas dinâmicas, interagir com bancos de dados e gerar conteúdo web.\n" +
+                "Embora tenha perdido popularidade para algumas outras linguagens, ainda é usado em muitos sites e aplicativos.";
 
-    public void mover(int momento) {
+    }
+        public void mover(int momento) {
 
         posicaoX = 8;
         posicaoY = 12;

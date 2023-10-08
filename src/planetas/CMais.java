@@ -9,8 +9,11 @@ public class CMais extends Planeta{
         this.posicaoX = 8;
         this.posicaoY = 14;
         this.rotacao = 0.5;
-    }
+        this.resumo = "C++ é uma linguagem de programação de uso geral e de alto desempenho.\n" +
+                "É uma extensão da linguagem C e é usado em uma ampla variedade de aplicativos, incluindo sistemas operacionais, jogos, software embarcado e aplicativos de alto desempenho.\n" +
+                "É conhecido por seu controle de baixo nível e recursos de programação orientada a objetos.";
 
+    }
     public void mover(int momento) {
 
         posicaoX = 8;

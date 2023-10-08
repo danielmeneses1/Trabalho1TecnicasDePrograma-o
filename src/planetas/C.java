@@ -7,10 +7,12 @@ public class C extends Planeta{
         this.nome = "C";
         this.translacao = 10;
         this.rotacao = 0.1;
+        this.resumo = "C é uma linguagem de programação de alto desempenho que é amplamente usada em desenvolvimento de sistemas, sistemas operacionais e software de baixo nível.\n" +
+                "É conhecida por sua eficiência e portabilidade, mas também requer um gerenciamento manual de memória.\n" +
+                "Muitas outras linguagens, incluindo C++, foram influenciadas pelo C em sua sintaxe e design.";
+
 
     }
-
-    @Override
     public void mover(int momento) {
         posicaoX = 8;
         posicaoY = 15;

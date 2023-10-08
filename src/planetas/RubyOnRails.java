@@ -7,8 +7,11 @@ public class RubyOnRails extends Planeta{
         this.nome = "Ruby";
         this.translacao = 2;
         this.rotacao = 48;
-    }
+        this.resumo = "Ruby on Rails, muitas vezes chamado apenas de \"Rails\", é um framework de desenvolvimento web baseado na linguagem Ruby.\n" +
+                "Ele segue o paradigma MVC (Model-View-Controller) e enfatiza a convenção sobre configuração, tornando o desenvolvimento web mais rápido e mais organizado.\n" +
+                "É conhecido por promover a produtividade do desenvolvedor e é amplamente utilizado para criar aplicativos da web.";
 
+    }
     public void mover(int momento) {
 
         posicaoX = 8;

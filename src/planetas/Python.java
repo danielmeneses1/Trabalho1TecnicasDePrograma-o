@@ -8,6 +8,10 @@ public class Python extends Planeta{
         this.translacao = 4;
         this.rotacao = 24;
         this.anoJavalar = 0;
+        this.resumo = "Python é uma linguagem de programação de alto nível conhecida por sua simplicidade e legibilidade.\n" +
+                "É amplamente utilizado em desenvolvimento web, análise de dados, automação, inteligência artificial e muitas outras áreas.\n" +
+                "Sua sintaxe limpa e fácil de aprender a torna uma escolha popular para iniciantes em programação.";
+
     }
 
     public void mover(int momento){

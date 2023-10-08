@@ -31,6 +31,7 @@ public class Relatorio {
         System.out.println();
         verificarSeExplodiu(falecidos);
         System.out.println();
+        exibirResumos();
 
     }
 
@@ -77,7 +78,13 @@ public class Relatorio {
             }
         }
     }
-
+public void exibirResumos(){
+        System.out.println("Liguagens do sistema Javalar:");
+        for(Planeta planeta : planetas){
+            System.out.println(planeta.getResumo());
+            System.out.println();
+        }
+}
 
 
 
