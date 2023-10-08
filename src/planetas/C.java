@@ -12,7 +12,6 @@ public class C extends Planeta{
 
     @Override
     public void mover(int momento) {
-
         posicaoX = 8;
         posicaoY = 15;
         int unidades = momento * translacao;

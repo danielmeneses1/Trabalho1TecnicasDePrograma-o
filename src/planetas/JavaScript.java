@@ -10,9 +10,6 @@ public class JavaScript extends Planeta {
     }
 
     public void mover(int momento){
-        if (momento != (int) momento) {
-            throw new IllegalArgumentException("O valor de momento deve ser um número inteiro.");
-        }
 
         posicaoX = 8;
         posicaoY = 10;
