@@ -16,15 +16,21 @@ public class Relatorio {
         this.plano = plano;
     }
 
-    public void ExibirRelatorio(int momento){
+    public void ExibirRelatorio(int momento,List<Planeta>falecidos){
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("RELATORIO");
         mostrarTranslacao();
+        System.out.println();
         mostrarColisoesDev();
+        System.out.println();
         mostrarColisoesBugs();
+        System.out.println();
         momentosTotais(momento);
+        System.out.println();
         totalDeDias(momento);
-        verificarSeExplodiu();
+        System.out.println();
+        verificarSeExplodiu(falecidos);
+        System.out.println();
 
     }
 
@@ -37,20 +43,16 @@ public class Relatorio {
     }
 
     public void mostrarColisoesDev(){
-        System.out.println();
+        System.out.println("Planetas ainda vivos que encontraram Desenvolvedores: ");
         for(Planeta planeta : planetas){
             System.out.println("O planeta "+ planeta.getNome()+ " colidiu com "+ planeta.getColisoesDevs() + " Devs");
         }
     }
     public void mostrarColisoesBugs(){
-        System.out.println();
+        System.out.println("Planetas ainda vivos que colidiram com Bugs");
         for(Planeta planeta : planetas){
             System.out.println("O planeta "+ planeta.getNome()+" colidiu com "+ planeta.getColisoesBugs() + " bugs");
         }
-    }
-
-    public void VMedRotacao(){
-
     }
 
     public void momentosTotais(int momento){
@@ -67,10 +69,11 @@ public class Relatorio {
             System.out.println("No planeta "+ planeta.getNome() + " Passaram-se "+ diasFormatados + " Dias");
         }
     }
-    public void verificarSeExplodiu(){
-        for (Planeta planeta : planetas){
+    public void verificarSeExplodiu(List<Planeta> falecidos){
+        System.out.println("Planetas que explodiram durante a execução do programa: ");
+        for (Planeta planeta : falecidos){
             if(planeta.getTranslacao() == 0){
-                System.out.println("O planeta" + planeta.getNome() + "Explodiu");
+                System.out.println("O planeta " + planeta.getNome() + " Explodiu");
             }
         }
     }

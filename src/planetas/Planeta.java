@@ -8,15 +8,15 @@ public abstract class Planeta extends Elemento implements IPlaneta {
     protected int tempo;
     protected double rotacao;
     protected int anoJavalar = 0;
-    public int colisoesBugs = 0;
-    public int colisoesDevs = 0;
+    protected int colisoesBugs = 0;
+    protected int colisoesDevs = 0;
 
     public Planeta(int posicaoX, int posicaoY) {
         super(posicaoX, posicaoY);
     }
 
     public void exibirPosicao(){
-        System.out.println("Posicao de "+ this.getClass().getSimpleName()+": x: "+ posicaoX + " y: "+ posicaoY);
+        System.out.println("Posicao de "+ this.getClass().getSimpleName()+": x= "+ posicaoX + " y= "+ posicaoY);
     }
 
     public void totalRotacao(int momento){
@@ -54,10 +54,6 @@ public abstract class Planeta extends Elemento implements IPlaneta {
         return translacao;
     }
 
-    public void setTranslacao(int translacao) {
-        this.translacao = translacao;
-    }
-
     public int getPosicaoX() {
         return posicaoX;
     }
@@ -74,10 +70,6 @@ public abstract class Planeta extends Elemento implements IPlaneta {
         this.posicaoY = posicaoY;
     }
 
-    public int getTempo() {
-        return tempo;
-    }
-
     public void setTempo(int tempo) {
         this.tempo = tempo;
     }
@@ -86,16 +78,8 @@ public abstract class Planeta extends Elemento implements IPlaneta {
         return colisoesBugs;
     }
 
-    public void setColisoesBugs(int colisoesBugs) {
-        this.colisoesBugs = colisoesBugs;
-    }
-
     public int getColisoesDevs() {
         return colisoesDevs;
-    }
-
-    public void setColisoesDevs(int colisoesDevs) {
-        this.colisoesDevs = colisoesDevs;
     }
 
     public double getRotacao() {
