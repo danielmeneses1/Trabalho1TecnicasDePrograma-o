@@ -79,6 +79,7 @@ public class Relatorio {
         }
     }
 public void exibirResumos(){
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("Liguagens do sistema Javalar:");
         for(Planeta planeta : planetas){
             System.out.println(planeta.getResumo());

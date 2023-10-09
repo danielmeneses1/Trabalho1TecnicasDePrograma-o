@@ -4,6 +4,7 @@ import elementos.Bug;
 import elementos.Dev;
 import planetas.*;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -160,17 +161,17 @@ public class Plano {
         for (Planeta planeta : planetas) {
             for (Planeta planeta1 : planetas) {
                 if (planeta1.getPosicaoY() == planeta.getPosicaoY() + 1 && planeta1.getPosicaoX() == planeta.getPosicaoX()) {
-                    System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    System.out.println("O planeta " + planeta.getNome() + " está alinhado com " + planeta1.getNome());
                 } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() + 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() - 1) {
-                    System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    System.out.println("O planeta " + planeta.getNome() + " está alinhado com " + planeta1.getNome());
                 } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() - 1 && planeta1.getPosicaoX() == planeta.getPosicaoX()) {
-                    System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    System.out.println("O planeta " + planeta.getNome() + " está alinhado com " + planeta1.getNome());
                 } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() - 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() - 1) {
-                    System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    System.out.println("O planeta " + planeta.getNome() + " está alinhado com " + planeta1.getNome());
                 } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() - 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() + 1) {
-                    System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    System.out.println("O planeta " + planeta.getNome() + " está alinhado com " + planeta1.getNome());
                 } else if (planeta1.getPosicaoY() == planeta.getPosicaoY() + 1 && planeta1.getPosicaoX() == planeta.getPosicaoX() + 1) {
-                    System.out.println("Os planetas " + planeta.getNome() + " e " + planeta1.getNome() + " estão alinhados");
+                    System.out.println("O planeta " + planeta.getNome() + " está alinhado com " + planeta1.getNome());
                 }
             }
         }
@@ -211,6 +212,19 @@ public class Plano {
             total ++;
         }
         System.out.println("Foram criados "+ total + " desenvolvedores");
+    }
+    public void distanciaEntreOsPlanetas(){
+        DecimalFormat formato = new DecimalFormat("#.##");
+        int deltaX= 0;
+        int deltaY = 0;
+        for(Planeta planeta : planetas){
+            for (Planeta planeta1 : planetas){
+                deltaX = Math.abs(planeta.getPosicaoX() - planeta1 .getPosicaoX());
+                deltaY = Math.abs(planeta.getPosicaoY() - planeta1.getPosicaoY());
+                if(planeta.getNome() != planeta1.getNome()){
+                System.out.println("A distancia entre " + planeta.getNome() + " e " + planeta1.getNome() +" é " + formato.format((Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY,2)))));
+            }}
+        }
     }
 
     public List<Planeta> getPlanetas() {

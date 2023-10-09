@@ -46,6 +46,8 @@ public class Menu {
                     momento += sc.nextInt();
                     Plano.moverEExibir(planetas, momento);
                     System.out.println();
+                    plano.distanciaEntreOsPlanetas();
+                    System.out.println();
 
                     plano.numeroDeBugs();
                     plano.numeroDeDevs();
