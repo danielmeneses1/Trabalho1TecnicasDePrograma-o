@@ -5,7 +5,7 @@ import elementos.Elemento;
 public abstract class Planeta extends Elemento implements IPlaneta {
     protected String nome;
     protected int translacao;
-    protected int tempo;
+    //protected int tempo;
     protected double rotacao;
     protected int anoJavalar = 0;
     protected int colisoesBugs = 0;
@@ -70,10 +70,7 @@ public abstract class Planeta extends Elemento implements IPlaneta {
     public void setPosicaoY(int posicaoY) {
         this.posicaoY = posicaoY;
     }
-
-    public void setTempo(int tempo) {
-        this.tempo = tempo;
-    }
+    
 
     public int getColisoesBugs() {
         return colisoesBugs;

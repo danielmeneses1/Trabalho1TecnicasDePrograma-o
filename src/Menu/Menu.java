@@ -16,18 +16,26 @@ public class Menu {
     private Plano plano;
     private List<Planeta> planetas;
     private int momento;
-    private List<Bug> bugs;
+    private List<Bug> bugs = new ArrayList<>();
+    private List<Dev> devs = new ArrayList<>();
     private boolean continuar = true;
     private List<Planeta> falecidos = new ArrayList<>();
     private List<Dev> devsColididos = new ArrayList<>();
     private List<Bug> bugsColididos = new ArrayList<>();
+    private static final int LimiteMaximo = 272;
     public Menu() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Bem vindo ao sistema Javalar");
+        System.out.println("Para começar informe a quantidade de bugs e devs que o sistema vai ter:");
 
         plano = new Plano();
-        plano.preencherBugs();
-        plano.preencherDevs();
+        System.out.println("Informe a quantidade de bugs que deseja adicionar");
+        int quantidadeBugs = sc.nextInt();
+
+        plano.preencherBugs(quantidadeBugs);
+        System.out.println("Informe a quantidade de devs que deseja adicionar");
+        int quantidadeDevs = sc.nextInt();
+        plano.preencherDevs(quantidadeDevs);
         planetas = plano.getPlanetas();
 
         while (continuar) {
@@ -62,8 +70,8 @@ public class Menu {
                     System.out.println();
                     plano.verificarAlinhamento();
                     System.out.println();
-                    this.momento = momento;
                     this.bugs = plano.getBugs();
+                    this.devs = plano.getDevs();
                     break;
                 case 2:
                     Relatorio relatorio = new Relatorio(this.planetas, this.plano);
@@ -71,12 +79,16 @@ public class Menu {
                     break;
                 case 3:
                     System.out.println();
-                    plano.preencherDevs();
+                    System.out.println("Informe a quantidade de desenvolvedores desejada:");
+                    quantidadeDevs = sc.nextInt();
+                    plano.preencherDevs(quantidadeDevs);
                     break;
 
                 case 4:
                     System.out.println();
-                    plano.preencherBugs();
+                    System.out.println("Informe a quantidade de Bugs desejada:");
+                    quantidadeBugs = sc.nextInt();
+                    plano.preencherBugs(quantidadeBugs);
                     break;
                 case 5:
                     continuar = false;
@@ -86,7 +98,12 @@ public class Menu {
             }
         }
     }
+    public void validarQuantidade(int quantidadeBugs,int quantidadeDevs) throws LimiteException{
 
+        if((quantidadeBugs + bugs.size() + quantidadeDevs + devs.size())>LimiteMaximo){
+            throw new LimiteException("Quantidade de bugs ou Devs excedidas, tente novamente");
+        }
+    }
 
 }
 

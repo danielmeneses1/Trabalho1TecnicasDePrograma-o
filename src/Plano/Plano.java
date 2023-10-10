@@ -8,7 +8,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Plano {
 
@@ -36,18 +35,7 @@ public class Plano {
         return planetas;
     }
 
-    public void preencherBugs() {
-        int limiteBugs = 100;
-        int quantidade = 0;
-
-        Scanner sc = new Scanner(System.in);
-        while (quantidade <= 0 || quantidade > limiteBugs) {
-            System.out.println("Informe a quantidade de Bugs desejada (até " + limiteBugs + "): ");
-            quantidade = sc.nextInt();
-            if (quantidade <= 0 || quantidade > limiteBugs) {
-                System.out.println("Quantidade inválida. Por favor, insira um valor entre 1 e " + limiteBugs + ".");
-            }
-        }
+    public void preencherBugs(int quantidade) {
         for (int i = 0; i < quantidade; i++) {
             Random random = new Random();
             int posicaoX = random.nextInt(17);
@@ -63,17 +51,8 @@ public class Plano {
         }
     }
 
-    public void preencherDevs() {
-        int limiteDevs = 100;
-        int quantidade = 0;
-        Scanner sc = new Scanner(System.in);
-        while (quantidade <= 0 || quantidade > limiteDevs) {
-            System.out.println("Informe a quantidade de Devs desejada (até " + limiteDevs + "): ");
-            quantidade = sc.nextInt();
-            if (quantidade <= 0 || quantidade > limiteDevs) {
-                System.out.println("Quantidade inválida. Por favor, insira um valor entre 1 e " + limiteDevs + ".");
-            }
-        }for (int i = 0; i < quantidade; i++) {
+    public void preencherDevs(int quantidade) {
+        for (int i = 0; i < quantidade; i++) {
             Random random = new Random();
             int posicaoX = random.nextInt(17);
             int posicaoY = random.nextInt(16);
@@ -237,6 +216,10 @@ public class Plano {
 
     public List<Bug> getBugs() {
         return bugs;
+    }
+
+    public List<Dev> getDevs() {
+        return devs;
     }
 }
 
